@@ -19,10 +19,16 @@
                 font-size: 16px;
                 background: #f2f2f2;
                 color: #2D3737;
-                display: flex;
+                display: block;
                 align-items: center;
                 justify-content: center;
                 min-height: 100%;
+                width: calc(100% - 48px);
+                max-width: 480px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
             }
             h1 {
                 display: block;
@@ -32,7 +38,6 @@
                 -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1);
                 box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1);
                 border-radius: 3px;
-                min-width: 500px;
                 display: block;
             }
             .protected__content {
@@ -88,7 +93,6 @@
 
     <body>
       <h1>Coming soon.</h1>
-      <br />
         <div class="protected">
             <div class="protected__alert" data-id="alert">You entered the wrong pass code</div>
             <div class="protected__content">
