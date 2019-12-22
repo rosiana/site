@@ -93,10 +93,10 @@
     <body>
       <h1>Coming soon.</h1>
         <div class="protected">
-            <div class="protected__alert" data-id="alert">You entered the wrong passcode</div>
+            <div class="protected__alert" data-id="alert">You entered the wrong pass code</div>
             <div class="protected__content">
-                <h1 class="protected__content__heading">Have a passcode?</h1>
-                <input class="protected__content__input" data-id="password" type="password" placeholder="Type passcode"/>
+                <h1 class="protected__content__heading">Have a pass code?</h1>
+                <input class="protected__content__input" data-id="password" type="password" placeholder="Type pass code"/>
                 <button data-id="button" type="button" class="protected__content__btn">Continue</button>
             </div>
         </div>
@@ -118,14 +118,14 @@
                     } else {
                         parent.location.hash = hash
                         alert[0].style.display = 'block'
-                        password[0].setAttribute('placeholder', 'Incorrect passcode')
+                        password[0].setAttribute('placeholder', 'Incorrect pass code')
                         password[0].value = ''
                     }
                 }
                 request.onerror = function () {
                     parent.location.hash = hash
                     alert[0].style.display = 'block'
-                    password[0].setAttribute('placeholder', 'Incorrect passcode')
+                    password[0].setAttribute('placeholder', 'Incorrect pass code')
                     password[0].value = ''
                 }
                 request.send()
