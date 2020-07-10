@@ -5,6 +5,8 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="robots" content="noindex, nofollow">
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lexend+Zetta&display=swap" rel="stylesheet">
 
         <style>
             *,
@@ -14,9 +16,9 @@
             }
             body,
             html {
-                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-                font-weight: 300;
-                font-size: 16px;
+                font-family: 'EB Garamond', serif;
+                font-weight: 400;
+                font-size: 18px;
                 background: #fff;
                 color: #2D3737;
                 display: block;
@@ -28,13 +30,24 @@
                 left: 50%;
                 top: 50%;
                 transform: translate(-50%, -50%);
+                text-align: center;
             }
             h1 {
                 display: block;
+                font-size: 56px;
+                font-weight: 400;
             }
             a {
-               color: #2D3737;  
-               font-size: 16px;
+                display: inline-block;
+               color: #888;  
+               font-size: 18px;
+               text-decoration: none;
+               border-bottom: solid 1px #ccc;
+               margin-top: 48px;
+               transition: .3s color ease-in-out;
+            }
+            a:hover {
+                color: #2D3737;
             }
             .protected {
                 background: #fff;
@@ -45,51 +58,62 @@
                 margin-bottom: 16px;
             }
             .protected__content {
-                padding: 24px 28px;
+                /*padding: 24px 28px;*/
             }
             .protected__content__heading {
-                font-size: 16px;
-                font-weight: 500;
-                margin: 0 0 12px;
+                font-size: 18px;
+                font-weight: 400;
+                margin: 0 0 20px;
                 line-height: 1;
             }
             .protected__alert {
                 display: none;
-                border-bottom: 1px solid transparent;
-                border-radius: 3px 3px 0 0;
-                padding: 12px 14px;
                 color: #a94442;
-                background-color: #f2dede;
-                border-color: #ebccd1;
+                position: absolute;
+                bottom: 56px;
+                font-family: 'EB Garamond', serif;
+                font-weight: 400;
+                font-size: 14px;
+                text-align: center;
+                width: 100%;
             }
             .protected__content__input {
+                border: none;
+                border-bottom: 2px solid darkgrey;
+                background-color: inherit;
                 display: block;
-                border: solid 1px #ccc;
-                padding: 12px 14px;
-                -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1);
-                box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1);
-                font-size: 16px;
                 width: 100%;
-                border-radius: 3px;
-                margin-bottom: 12px;
+                margin: none;
+                padding: 16px 14px;
+                font-family: 'Lexend Zetta', sans-serif;
+                font-size: 11px;
+                text-transform: uppercase;
+                text-align: center;
             }
-            .protected__content__input:focus {
+            /*.protected__content__input:focus {
                 outline: none;
                 border-color: #228843;
-            }
+            }*/
             .protected__content__btn {
-                background-color: #228843;
-                border-radius: 3px;
+                display: block;
+                width: 100%;
+                background-color: #2D3737;
+                transition: .3s background-color ease-in-out;
                 cursor: pointer;
                 border: none;
                 color: #fff;
-                padding: 12px 14px;
-                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-                font-weight: 500;
-                font-size: 16px;
+                padding: 16px 14px;
+                font-family: 'Lexend Zetta', sans-serif;
+                font-size: 11px;
+                text-transform: uppercase;
             }
             .protected__content__btn:hover {
-                background-color: #1C6D36;
+                background-color: #1e2222;
+            }
+            .protected__content__btn:focus {
+                background-color: #1e2222;
+                border-radius: 0;
+                outline: none;
             }
             ::-webkit-input-placeholder { /* Edge */
                 color: #ccc;
@@ -100,18 +124,73 @@
             ::placeholder {
                 color: #ccc;
             }
+            input[type=password], select {
+                border: none;
+                border-bottom: 1px solid #ccc;
+                background-color: inherit;
+                display: block;
+                width: 100%;
+                margin: none;
+            }
+
+            input[type=password]:focus, select:focus {
+                outline: none;
+            }
+
+            .form-group {
+                text-align: center;
+                position: relative;
+            }
+
+            .line {
+                height: 1px;
+                width: 0px;
+                position: absolute;
+                background-color: #ccc;
+                display: inline-block;
+                transition: .3s width ease-in-out;
+                position: relative;
+                top: -18px;
+            }
+
+            input[type=password]:focus+.line, select:focus+.line {
+                width: 100%;
+                background-color: #2D3737;
+            }
         </style>
 
     </head>
 
     <body>
       <h1>Coming soon.</h1>
+      <!--<div class="signup-form">
+        <form>
+          <div class="form-group">
+          <input type="text" name="firstname" class="line-animation" placeholder="firstname">
+          <div class="line"></div>
+          </div>
+          <div class="form-group">
+          <input type="text" name="lastname" class="line-animation" placeholder="lastname"><div class="line"></div>
+          </div>
+          <div class="form-group">
+          <select name="country">
+            <option value="sweden">Sweden</option>
+            <option value="uk">United Kingdom</option>
+            <option value="us">United States</option>
+            <option value="canada">Canada</option>
+            </select><div class="line"></div>
+          </div>
+        </form>
+      </div>-->
         <div class="protected">
-            <div class="protected__alert" data-id="alert">You entered the wrong access code.</div>
             <div class="protected__content">
                 <h1 class="protected__content__heading">Got the access code?</h1>
-                <input class="protected__content__input" data-id="password" type="password" placeholder="Type access code"/>
+                <div class="form-group">
+                    <input class="protected__content__input line-animation" data-id="password" type="password" placeholder="Type access code"/>
+                    <div class="line"></div>
+                </div>
                 <button data-id="button" type="button" class="protected__content__btn">Enter</button>
+                <div class="protected__alert" data-id="alert">You submitted a wrong access code. Please try again.</div>
             </div>
         </div>
         <a href="mailto:hello@rosi.design">hello@rosi.design</a>
