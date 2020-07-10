@@ -14,8 +14,7 @@
             *:before {
                 box-sizing: border-box;
             }
-            body,
-            html {
+            .container {
                 font-family: 'EB Garamond', serif;
                 font-weight: 400;
                 font-size: 18px;
@@ -25,7 +24,7 @@
                 align-items: center;
                 justify-content: center;
                 width: calc(100% - 48px);
-                max-width: 480px;
+                max-width: 400px;
                 position: absolute;
                 left: 50%;
                 top: 50%;
@@ -157,11 +156,17 @@
                 width: 100%;
                 background-color: #2D3737;
             }
+            @media (max-width: 575.98px) {
+                h1 {
+                    font-size: 48px;
+                }
+            }
         </style>
 
     </head>
 
     <body>
+    <div class="container">
       <h1>Coming soon.</h1>
       <!--<div class="signup-form">
         <form>
@@ -194,6 +199,7 @@
             </div>
         </div>
         <a href="mailto:hello@rosi.design">hello@rosi.design</a>
+        </div>
 
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/js-sha1/0.6.0/sha1.min.js"></script>
         <script type="text/javascript">
