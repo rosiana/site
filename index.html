@@ -24,7 +24,7 @@
                 align-items: center;
                 justify-content: center;
                 width: calc(100% - 48px);
-                max-width: 400px;
+                max-width: 320px;
                 position: absolute;
                 left: 50%;
                 top: 50%;
@@ -35,9 +35,11 @@
                 display: block;
                 font-size: 56px;
                 font-weight: 400;
+                margin-top: 0;
+                margin-bottom: 48px;
             }
             a {
-                display: inline-block;
+               display: inline-block;
                color: #888;  
                font-size: 18px;
                text-decoration: none;
@@ -58,18 +60,19 @@
             }
             .protected__content {
                 /*padding: 24px 28px;*/
+                position: relative;
             }
             .protected__content__heading {
                 font-size: 18px;
                 font-weight: 400;
-                margin: 0 0 20px;
+                margin: 0;
                 line-height: 1;
             }
             .protected__alert {
                 display: none;
                 color: #a94442;
                 position: absolute;
-                bottom: 56px;
+                top: 20spx;
                 font-family: 'EB Garamond', serif;
                 font-weight: 400;
                 font-size: 14px;
@@ -82,7 +85,7 @@
                 background-color: inherit;
                 display: block;
                 width: 100%;
-                margin: none;
+                margin-top: 24px;
                 padding: 16px 14px;
                 font-family: 'Lexend Zetta', sans-serif;
                 font-size: 11px;
@@ -143,22 +146,32 @@
             .form-group {
                 text-align: center;
                 position: relative;
+                margin-bottom: 16px;
             }
 
             .line {
                 height: 1px;
                 width: 0px;
                 position: absolute;
-                background-color: #ccc;
+                background-color: #2D3737;
                 display: inline-block;
-                transition: .3s width ease-in-out;
-                position: relative;
-                top: -18px;
+                transition: .3s width ease-in-out, .3s width ease-in-out;
+                bottom: 0;
+                transform: translateX(-50%);
             }
 
             input[type=password]:focus+.line, select:focus+.line {
                 width: 100%;
                 background-color: #2D3737;
+                left: 50%;
+            }
+            .logo {
+                width: 48px;
+                height: auto;
+                margin-top: 24px;
+                display: block;
+                margin-left: 50%;
+                transform: translateX(-50%);
             }
             @media (max-width: 575.98px) {
                 h1 {
@@ -171,6 +184,7 @@
 
     <body>
     <div class="container">
+        <img class="logo" src="logo.png">
       <h1>Coming soon.</h1>
       <!--<div class="signup-form">
         <form>
@@ -194,12 +208,12 @@
         <div class="protected">
             <div class="protected__content">
                 <h1 class="protected__content__heading">Got the access code?</h1>
+                <div class="protected__alert" data-id="alert">You submitted a wrong access code. Please try again.</div>
                 <div class="form-group">
                     <input class="protected__content__input line-animation" data-id="password" type="password" placeholder="Type access code"/>
                     <div class="line"></div>
                 </div>
                 <button data-id="button" type="button" class="protected__content__btn">Enter</button>
-                <div class="protected__alert" data-id="alert">You submitted a wrong access code. Please try again.</div>
             </div>
         </div>
         <a href="mailto:hello@rosi.design">hello@rosi.design</a>
